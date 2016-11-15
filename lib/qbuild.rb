@@ -5,6 +5,6 @@ module Qbuild
   # Your code goes here...
 
   def self.main(arg)
-    puts "Qbuild: #{arg}"
+    Jshandler.minify_js
   end
 end
