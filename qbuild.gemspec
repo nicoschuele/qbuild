@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Qbuild is an easy build system for JS, SCSS and CSS assets."
   spec.homepage      = "https://github.com/nicoschuele/qbuild"
   spec.license       = "Apache-2.0"
-  spec.files         = Dir["{lib}/**/*", "{lib}/**/.*", "LICENSE.txt", "Rakefile", "README.md"]
+  spec.files         = Dir["{lib}/**/*", "{lib}/**/.*", "LICENSE.txt", "Rakefile", "README.md", "COC.md"]
   spec.executables   << 'qbuild'
   spec.require_paths = ["lib"]
   spec.add_dependency 'pad_utils', '>=1.14', '< 2.0'
