@@ -3,7 +3,7 @@ require 'pad_utils'
 module ConfigReader
   def self.options
     opts = {}
-    unless PadUtils.file_exists?('.qbuild.json')
+    unless PadUtils.file_exist?('.qbuild.json')
       opts = { js_path: 'scripts', scss_path: 'stylesheets', css_path: 'stylesheets' }
       return opts
     end

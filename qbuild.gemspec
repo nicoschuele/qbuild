@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'qbuild/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "Qbuild"
+  spec.name          = "qbuild"
   spec.version       = Qbuild::VERSION
   spec.required_ruby_version = '>= 2.2.2'
   spec.authors       = ["Nico Schuele"]
