@@ -18,4 +18,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.add_dependency 'pad_utils', '>=1.14', '< 2.0'
   spec.add_dependency 'uglifier', '>=3.0.3', '< 3.1'
+  spec.add_dependency 'sass', '>=3.4.22', '< 3.5'
 end
