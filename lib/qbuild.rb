@@ -31,14 +31,18 @@ module Qbuild
   end
 
   def self.build_this_thing
+    start_time = Time.now
     puts
     PadUtils.puts_c 'Minifying JavaScript...', :green
     Qbuild::Jshandler.minify_js
     PadUtils.puts_c 'Converting Sass & minifying CSS...', :green
     Qbuild::StylesheetHandler.transpile_and_minify_style
-
-  # rescue
-  #   PadUtils.puts_c 'Something went really wrong.', :red
+    end_time = Time.now
+    interval = PadUtils.interval(start_time, end_time, :seconds)
+    puts
+    PadUtils.puts_c "Completed in #{interval} seconds!", :green
+  rescue
+    PadUtils.puts_c 'Something went really wrong.', :red
   end
 
   def self.display_options
