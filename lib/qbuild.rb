@@ -2,6 +2,7 @@ require_relative 'qbuild/version'
 require_relative 'qbuild/config'
 require_relative 'qbuild/jshandler'
 require_relative 'qbuild/stylesheet_handler'
+require_relative 'qbuild/build_action'
 
 module Qbuild
   def self.main(arg)
@@ -33,10 +34,18 @@ module Qbuild
   def self.build_this_thing
     start_time = Time.now
     puts
+    unless Qbuild::Config.pre_build.nil? || Qbuild::Config.pre_build.empty?
+      PadUtils.puts_c 'Running pre-build scripts...', :green
+      Qbuild::BuildAction.run_pre_build_actions
+    end
     PadUtils.puts_c 'Minifying JavaScript...', :green
     Qbuild::Jshandler.minify_js
     PadUtils.puts_c 'Converting Sass & minifying CSS...', :green
     Qbuild::StylesheetHandler.transpile_and_minify_style
+    unless Qbuild::Config.post_build.nil? || Qbuild::Config.post_build.empty?
+      PadUtils.puts_c 'Running post-build scripts...', :green
+      Qbuild::BuildAction.run_post_build_actions
+    end
     end_time = Time.now
     interval = PadUtils.interval(start_time, end_time, :seconds)
     puts

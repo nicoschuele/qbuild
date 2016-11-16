@@ -9,10 +9,7 @@
     "minified_stylesheets_path": "stylesheets",
     "stylesheet_name": "style.min.css",
     "pre_build": [
-        "ls -lah",
-        "echo Starting build..."
+        "ls -lah"
     ],
-    "post_build": [
-        "echo Build finished!"
-    ]
+    "post_build": []
 }
