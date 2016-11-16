@@ -22,20 +22,20 @@ module Qbuild
   def self.init
     Qbuild::Config.init
     puts
-    PadUtils.puts_c "Qbuild initialized.", :green
+    PadUtils.puts_c 'Qbuild initialized.', :green
     PadUtils.puts_c "Update options in '.qbuild.json'"
     puts
   rescue
-    PadUtils.puts_c "Something went really wrong.", :red
+    PadUtils.puts_c 'Something went really wrong.', :red
   end
 
   def self.build_this_thing
     puts
-    PadUtils.puts_c "Minifying JavaScript...", :green
+    PadUtils.puts_c 'Minifying JavaScript...', :green
     Qbuild::Jshandler.minify_js
 
   rescue
-    PadUtils.puts_c "Something went really wrong.", :red
+    PadUtils.puts_c 'Something went really wrong.', :red
   end
 
   def self.display_options
