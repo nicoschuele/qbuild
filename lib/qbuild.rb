@@ -51,6 +51,12 @@ module Qbuild
       puts "- #{path}"
     end
 
+    PadUtils.puts_c 'minified_js_path:', :blue
+    puts "- #{Qbuild::Config.minified_js_path}"
+
+    PadUtils.puts_c 'minified_stylesheets_path', :blue
+    puts "- #{Qbuild::Config.minified_stylesheets_path}"
+
     PadUtils.puts_c 'stylesheet_name:', :blue
     puts "- #{Qbuild::Config.stylesheet_name}"
 

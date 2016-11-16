@@ -2,9 +2,11 @@
     "js_paths": [
         "scripts"
     ],
+    "minified_js_path": "scripts",
     "stylesheets_paths": [
         "stylesheets"
     ],
+    "minified_stylesheets_path": "stylesheets",
     "stylesheet_name": "style.min.css",
     "pre_build": [
         "ls -lah",

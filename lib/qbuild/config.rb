@@ -12,6 +12,14 @@ module Qbuild
       read_key(:js_paths)
     end
 
+    def self.minified_js_path
+      read_key(:minified_js_path)
+    end
+
+    def self.minified_stylesheets_path
+      read_key(:minified_stylesheets_path)
+    end
+
     def self.stylesheets_paths
       read_key(:stylesheets_paths)
     end
