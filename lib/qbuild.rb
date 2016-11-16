@@ -1,6 +1,7 @@
 require_relative 'qbuild/version'
 require_relative 'qbuild/config'
 require_relative 'qbuild/jshandler'
+require_relative 'qbuild/stylesheet_handler'
 
 module Qbuild
   def self.main(arg)
@@ -33,9 +34,11 @@ module Qbuild
     puts
     PadUtils.puts_c 'Minifying JavaScript...', :green
     Qbuild::Jshandler.minify_js
+    PadUtils.puts_c 'Converting Sass & minifying CSS...', :green
+    Qbuild::StylesheetHandler.transpile_and_minify_style
 
-  rescue
-    PadUtils.puts_c 'Something went really wrong.', :red
+  # rescue
+  #   PadUtils.puts_c 'Something went really wrong.', :red
   end
 
   def self.display_options
@@ -45,9 +48,9 @@ module Qbuild
       puts "- #{path}"
     end
 
-    stylesheets_paths = Qbuild::Config.stylesheets_paths
-    PadUtils.puts_c 'stylesheets_paths:', :blue
-    stylesheets_paths.each do |path|
+    stylesheet_filenames = Qbuild::Config.stylesheet_filenames
+    PadUtils.puts_c 'stylesheet_filenames:', :blue
+    stylesheet_filenames.each do |path|
       puts "- #{path}"
     end
 

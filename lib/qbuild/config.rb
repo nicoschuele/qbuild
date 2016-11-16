@@ -25,8 +25,8 @@ module Qbuild
       read_key(:minified_stylesheets_path)
     end
 
-    def self.stylesheets_paths
-      read_key(:stylesheets_paths)
+    def self.stylesheet_filenames
+      read_key(:stylesheet_filenames)
     end
 
     def self.stylesheet_name

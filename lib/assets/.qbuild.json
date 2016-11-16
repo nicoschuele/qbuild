@@ -3,8 +3,8 @@
         "scripts"
     ],
     "minified_js_path": "scripts",
-    "stylesheets_paths": [
-        "stylesheets"
+    "stylesheet_filenames": [
+        "stylesheets/style.scss"
     ],
     "minified_stylesheets_path": "stylesheets",
     "stylesheet_name": "style.min.css",
