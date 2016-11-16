@@ -4,11 +4,16 @@ module ConfigReader
   def self.options
     opts = {}
     unless PadUtils.file_exist?('.qbuild.json')
-      opts = { js_path: 'scripts', scss_path: 'stylesheets', css_path: 'stylesheets' }
+      opts = { js_path: 'scripts', scss_path: 'stylesheets', css_path: 'stylesheets', css_file: 'style.min.css' }
       return opts
     end
     conf = read_config
-    opts = { js_path: conf[:js_path], scss_path: conf[:scss_path], css_path: [:css_path] }
+    opts = {
+      js_path: conf[:js_path],
+      scss_path: conf[:scss_path],
+      css_path: conf[:css_path],
+      css_file: conf[:css_file]
+    }
     opts
   end
 
