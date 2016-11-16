@@ -1,8 +1,13 @@
 require 'pad_utils'
+require 'fileutils'
 
 module Qbuild
   module Config
     INIT_CONFIG_FILE = "#{File.dirname(__FILE__)}/../assets/.qbuild.json".freeze
+
+    def self.create_target_directory(dir_name)
+      FileUtils.mkdir_p(dir_name) unless File.directory?(dir_name)
+    end
 
     def self.init
       PadUtils.copy_file(INIT_CONFIG_FILE, '.')
