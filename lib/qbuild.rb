@@ -10,6 +10,8 @@ module Qbuild
       display_version
     elsif arg[0] == '--options' || arg[0] == '-o'
       display_options
+    elsif arg[0] == 'run'
+      build_this_thing
     else
       display_help
     end
@@ -23,6 +25,15 @@ module Qbuild
     PadUtils.puts_c "Qbuild initialized.", :green
     PadUtils.puts_c "Update options in '.qbuild.json'"
     puts
+  rescue
+    PadUtils.puts_c "Something went really wrong.", :red
+  end
+
+  def self.build_this_thing
+    puts
+    PadUtils.puts_c "Minifying JavaScript...", :green
+    Qbuild::Jshandler.minify_js
+
   rescue
     PadUtils.puts_c "Something went really wrong.", :red
   end
