@@ -1,0 +1,16 @@
+{
+    "js_paths": [
+        "scripts"
+    ],
+    "stylesheets_paths": [
+        "stylesheets"
+    ],
+    "stylesheet_name": "style.min.css",
+    "pre_build": [
+        "ls -lah",
+        "echo Starting build..."
+    ],
+    "post_build": [
+        "echo Build finished!"
+    ]
+}
