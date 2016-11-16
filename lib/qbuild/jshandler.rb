@@ -1,6 +1,6 @@
 require 'uglifier'
 require 'pad_utils'
-require_relative 'config_reader'
+require_relative 'config'
 
 module Qbuild
   module Jshandler
