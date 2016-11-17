@@ -50,8 +50,6 @@ module Qbuild
     interval = PadUtils.interval(start_time, end_time, :seconds)
     puts
     PadUtils.puts_c "Completed in #{interval} seconds!", :green
-  rescue
-    PadUtils.puts_c 'Something went really wrong.', :red
   end
 
   def self.display_options
