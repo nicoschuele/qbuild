@@ -8,8 +8,6 @@
     ],
     "minified_stylesheets_path": "stylesheets",
     "stylesheet_name": "style.min.css",
-    "pre_build": [
-        "ls -lah"
-    ],
+    "pre_build": [],
     "post_build": []
 }
