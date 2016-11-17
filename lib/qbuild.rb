@@ -92,12 +92,22 @@ module Qbuild
   end
 
   def self.display_help
-    # TODO: Add some help
-    puts 'Todo...'
+    puts
+    PadUtils.puts_c "Qbuild #{Qbuild::VERSION}", :blue
+    PadUtils.puts_c "************", :blue
+    puts
+    PadUtils.puts_c "Init:         qbuild --init"
+    PadUtils.puts_c "View options: qbuild --options"
+    PadUtils.puts_c "Build:        qbuild run"
+    puts
   end
 
   def self.display_version
-    # TODO: Display current version & info
-    puts 'Version...'
+    puts
+    PadUtils.puts_c "Qbuild #{Qbuild::VERSION}", :blue
+    PadUtils.puts_c "************", :blue
+    PadUtils.puts_c "https://github.com/nicoschuele/qbuild"
+    PadUtils.puts_c "Contact: @nicoschuele"
+    puts
   end
 end
