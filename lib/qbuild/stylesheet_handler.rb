@@ -11,6 +11,7 @@ module Qbuild
       Qbuild::Config.create_target_directory(min_style_path)
       content = ''
       style_filenames.each do |file|
+        next unless PadUtils.file_exist?(file)
         next unless style_formats.include? File.extname(file)
         next if file.include? '.min.css'
         content += "\n#{File.read(file)}"
